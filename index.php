@@ -104,26 +104,41 @@ require ("logica/Especialidad.php");
 		</div>
 		
 		<div class="row mt-3">
-			<div class="col">
-				<div class="card">
-					<div class="card-header"><h4>Especialidades</h4></div>
-					<div class="card-body">
-        				<?php 
-        				$especialidad = new Especialidad();
-        				$especialidades = $especialidad -> consultar();
-        				echo "<ul>";
-        				foreach($especialidades as $esp){
-        				    echo "<li>" . $esp -> getNombre();
-        				    // AQUI
-        				    
-        				    echo "</li>";
-        				}
-        				echo "</ul>";
-        				?>			
-    				</div>
-				</div>
-			</div>
-		</div>
+    <div class="col">
+        <div class="card">
+            <div class="card-header"><h4>Especialidades</h4></div>
+            <div class="card-body">
+                <?php 
+                require_once ("logica/Medico.php");
+                require_once ("logica/Especialidad.php");
+                
+                $especialidad = new Especialidad();
+                $especialidades = $especialidad->consultar();
+                echo "<ul class='list-group'>";
+                foreach($especialidades as $esp){
+                    echo "<li class='list-group-item'><strong>" . $esp->getNombre() . "</strong>";
+                    
+                    $medico = new Medico();
+                    $medicos = $medico->consultarPorEspecialidad($esp->getId());
+                    
+                    if(count($medicos) > 0) {
+                        echo "<ul class='list-group list-group-flush mt-2'>";
+                        foreach($medicos as $med) {
+                            echo "<li class='list-group-item'>" . $med->getNombreCompleto() . "</li>";
+                        }
+                        echo "</ul>";
+                    } else {
+                        echo "<div class='text-muted mt-2'>No hay médicos asignados</div>";
+                    }
+                    
+                    echo "</li>";
+                }
+                echo "</ul>";
+                ?>            
+            </div>
+        </div>
+    </div>
+</div>
 	</div>
 
 
