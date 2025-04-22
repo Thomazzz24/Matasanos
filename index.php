@@ -106,7 +106,7 @@ require ("logica/Especialidad.php");
 		<div class="row mt-3">
     <div class="col">
         <div class="card">
-            <div class="card-header"><h4>Especialidades</h4></div>
+            <div class="card-header"><h4>Especialidade3	s</h4></div>
             <div class="card-body">
                 <?php 
                 require_once ("logica/Medico.php");
