@@ -1,5 +1,7 @@
 <?php 
 require ("logica/Especialidad.php");
+require ("logica/Cita.php");
+
 ?>
 
 
@@ -157,7 +159,6 @@ require ("logica/Especialidad.php");
                         </thead>
                         <tbody>
                             <?php
-                            require_once("logica/Cita.php");
                             $cita = new Cita();
                             $citas = $cita->CitasDisponibles();
                             
@@ -166,7 +167,6 @@ require ("logica/Especialidad.php");
 								echo "<td>".$c['paciente']."</td>";
 								echo "<td>".$c['medico']."</td>";
 								echo "<td>".$c['consultorio']."</td>";
-								echo "</tr>";
 							}
                             
                             

@@ -6,9 +6,7 @@ class CitaDAO {
                 co.nombre AS consultorio
                 FROM Cita c
                 JOIN Paciente p ON c.Paciente_idPaciente = p.idPaciente
-                JOIN Medico m ON c.Medico_idMedico = m.idMedico
-                JOIN Consultorio co ON c.Consultorio_idConsultorio = co.idConsultorio
-                ORDER BY c.fecha, c.hora";
+                JOIN Medico m ON c.Medico_idMedico = m.idMedico JOIN Consultorio co ON c.Consultorio_idConsultorio = co.idConsultorio";
     }
 }
 ?>
