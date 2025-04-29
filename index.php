@@ -106,7 +106,7 @@ require ("logica/Especialidad.php");
 		<div class="row mt-3">
     <div class="col">
         <div class="card">
-            <div class="card-header"><h4>Especialidade3	s</h4></div>
+            <div class="card-header"><h4>Especialidade s</h4></div>
             <div class="card-body">
                 <?php 
                 require_once ("logica/Medico.php");
@@ -140,6 +140,44 @@ require ("logica/Especialidad.php");
     </div>
 </div>
 	</div>
+	
+
+			<!-- problem oarcial-->
+
+        <div class="card">
+                <h1></i>Listado de Citas</h1>
+            </div>
+			<table class="table table-striped table-dark">
+			<thead class="table">
+                            <tr>
+                                <th>Paciente</th>
+                                <th>Medico</th>
+                                <th>Consultorio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            require_once("logica/Cita.php");
+                            $cita = new Cita();
+                            $citas = $cita->CitasDisponibles();
+                            
+                            foreach($citas as $c) {
+								echo "<tr>";
+								echo "<td>".$c['paciente']."</td>";
+								echo "<td>".$c['medico']."</td>";
+								echo "<td>".$c['consultorio']."</td>";
+								echo "</tr>";
+							}
+                            
+                            
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
