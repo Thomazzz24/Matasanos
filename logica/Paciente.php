@@ -1,14 +1,12 @@
 <?php
+require_once("logica/Persona.php");
+
 class Paciente extends Persona {
-    private $fechaNacimiento;
-    
-    public function __construct($id=0, $nombre="", $apellido="", $correo="", $fechaNacimiento="") {
-        parent::__construct($id, $nombre, $apellido, $correo);
-        $this->fechaNacimiento = $fechaNacimiento;
+    private $foto;
+    private $especialidad;
+
+    public function __construct($id = "", $nombre = "", $apellido = "", $correo = "", $clave = ""){
+        parent::__construct($id, $nombre, $apellido, $correo, $clave);
     }
     
-    public function getFechaNacimiento() {
-        return $this->fechaNacimiento;
-    }
 }
-?>
