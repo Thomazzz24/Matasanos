@@ -53,6 +53,24 @@ class Medico extends Persona {
             return false;
         }
     }
+<<<<<<< HEAD
+=======
+
+    public function validar(){
+        $conexion = new Conexion();
+        $medicoDAO = new MedicoDAO();
+        $conexion -> abrir();
+        $conexion -> ejecutar($medicoDAO -> validar($this->id));
+        if($conexion -> filas() == 1){
+            $this -> id = $conexion -> registro()[0];
+            $conexion->cerrar();
+            return true;
+        }else{
+            $conexion->cerrar();
+            return false;
+        }
+    }
+>>>>>>> 401e1b60fc2bf7a80a9d203ddb0cbca409d824c5
     
     public function consultar(){
         $conexion = new Conexion();

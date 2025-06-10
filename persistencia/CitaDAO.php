@@ -16,6 +16,7 @@ class CitaDAO{
         $this -> consultorio = $consultorio;
     }
     
+<<<<<<< HEAD
     public function consultar($rol, $id){
         $sentencia = "select c.idCita, c.fecha, c.hora, p.idPaciente, p.nombre, p.apellido, m.idMedico, m.nombre, m.apellido, con.idConsultorio, con.nombre
                 from Cita c join Paciente p on c.Paciente_idPaciente = p.idPaciente
@@ -27,6 +28,13 @@ class CitaDAO{
             $sentencia .= " where p.idPaciente = '" . $id . "'";
         }
         return $sentencia;
+=======
+    public function consultar(){
+        return "select c.idCita, c.fecha, c.hora, p.idPaciente, p.nombre, p.apellido, m.idMedico, m.nombre, m.apellido, con.idConsultorio, con.nombre
+                from Cita c join Paciente p on c.Paciente_idPaciente = p.idPaciente
+                            join Medico m on c.Medico_idMedico = m.idMedico
+                            join Consultorio con on c.Consultorio_idConsultorio = con.idConsultorio";    
+>>>>>>> 401e1b60fc2bf7a80a9d203ddb0cbca409d824c5
     }
     
     

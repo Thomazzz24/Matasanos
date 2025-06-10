@@ -24,6 +24,24 @@ class Admin extends Persona {
         }
     }
 
+<<<<<<< HEAD
+=======
+    public function validar(){
+        $conexion = new Conexion();
+        $adminDAO = new AdminDAO();
+        $conexion -> abrir();
+        $conexion -> ejecutar($adminDAO -> validar($this->id));
+        if($conexion -> filas() == 1){            
+            $this -> id = $conexion -> registro()[0];
+            $conexion->cerrar();
+            return true;
+        }else{
+            $conexion->cerrar();
+            return false;
+        }
+    }
+
+>>>>>>> 401e1b60fc2bf7a80a9d203ddb0cbca409d824c5
     public function consultar(){
         $conexion = new Conexion();
         $adminDAO = new AdminDAO($this -> id);

@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 require_once("persistencia/Conexion.php");
 require_once("logica/Persona.php");
 require_once("persistencia/PacienteDAO.php");
@@ -51,4 +52,16 @@ class Paciente extends Persona {
         $conexion->cerrar();
         return $pacientes;
     }
+=======
+require_once("logica/Persona.php");
+
+class Paciente extends Persona {
+    private $foto;
+    private $especialidad;
+
+    public function __construct($id = "", $nombre = "", $apellido = "", $correo = "", $clave = ""){
+        parent::__construct($id, $nombre, $apellido, $correo, $clave);
+    }
+    
+>>>>>>> 401e1b60fc2bf7a80a9d203ddb0cbca409d824c5
 }
